@@ -1,10 +1,10 @@
 async function startProgram() {
-	await smallsquare ()
-
-
+	await smallSquare ()
+	await getInPosition ()
+	await small Square ()
+	
 }
-
-async function smallsquare(){
+async function smallSquare(){
 	//65cm sides
 	// This is Andy's code for making the RVR drive in a square.
 
@@ -19,15 +19,20 @@ async function smallsquare(){
 	await roll(180,50,2.0)
 	await stopRoll()
 	await roll(270,1,0.75)
-
 	await stopRoll()
 	await roll(270,50,2.0)
 	await stopRoll()
 	
 	await roll(0,1,0.5) //This realigns the robot at the end of the movement.
-  
-  
-  }
+}
+async function getInPosition () {
+	//this will set the robot in position 2cm to the left and 28cm above the top left corner of the original square ontop of the square in the middle of the formation
+	await roll(0,70,2.0)
+	await roll(270,1,0.75)
+	await stopRoll()
+	await roll(270,50,2.5)
+	await stopRoll()
+}
   
 async function tiga_square(){
 	// This is our sample code for making the RVR drive in a square.
